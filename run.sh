@@ -1,7 +1,5 @@
 #!/bin/bash
 
-NGINX_VERSION="1.15.2"
-
 # 1. First let's start our ELK-Stack
 docker-compose up -d --build --force-recreate
 
@@ -16,6 +14,6 @@ docker run -d --rm --name nginx \
   --log-opt gelf-address=udp://$LOGSTASH_ADDRESS:12201 \
   --log-opt tag="test" \
   -p 80:80 \
-  nginx:$NGINX_VERSION
+  nginx:1.15.2
 
 echo " run \"curl localhost\" to create log events"
