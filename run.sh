@@ -3,7 +3,7 @@
 NGINX_VERSION="1.15.2"
 
 # 1. First let's start our ELK-Stack
-docker-compose up -d
+docker-compose up -d --build --force-recreate
 
 # this could be exported to a environment variable
 LOGSTASH_ADDRESS=$(docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' nginxelk_logstash_1)
