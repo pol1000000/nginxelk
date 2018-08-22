@@ -1,6 +1,7 @@
 version: "3"
 
 services: 
+
   elasticsearch:
     image: elasticsearch:5.6.10
     networks: 
@@ -10,6 +11,9 @@ services:
     build: ./logstash
     depends_on: 
       - elasticsearch
+    ports:
+      - 12201:12201/udp
+      - 53:53
     networks:
       - net
 
@@ -22,6 +26,18 @@ services:
     networks: 
       - net
 
+  nginx:
+    image: nginx:latest
+    ports:
+      - 80:80
+    depends_on:
+      - logstash
+    logging:
+      driver: gelf
+      options:
+        gelf-address: "udp://localhost:12201"
+
 networks: 
+
   net:
     driver: bridge
