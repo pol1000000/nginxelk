@@ -3,7 +3,7 @@
 ## docker-compose
 ### Build & Run
 ```
-docker-compose up --build --force-recreate
+docker-compose up -d --build --force-recreate
 ```
 ### Stop & Remove
 ```
