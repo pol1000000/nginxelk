@@ -13,7 +13,6 @@ services:
       - elasticsearch
     ports:
       - 12201:12201/udp
-      - 53:53
     networks:
       - net
 
