@@ -1,4 +1,4 @@
 #!/bin/bash
 
 docker stop nginx
-docker-compose down
+docker-compose rm -s -f -v
