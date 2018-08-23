@@ -31,10 +31,10 @@ services:
 
   nginx:
     image: nginx:latest
-    ports:
-      - 80:80
     depends_on:
       - logstash
+    ports:
+      - 80:80
     logging:
       driver: gelf
       options:
