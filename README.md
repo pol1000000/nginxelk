@@ -5,7 +5,7 @@
 ## docker-compose
 ### Build & Run
 ```
-docker-compose up -d --build --force-recreate
+docker-compose up -d --build
 ```
 ### Log
 ```
