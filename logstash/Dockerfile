@@ -9,8 +9,7 @@ ADD http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz .
 RUN tar -xzvf GeoLite2-City.tar.gz && \
   mv GeoLite2-City*/ GeoLite2-City/ && \
   chmod -R 664 /var/opt/GeoLite2-City/* && \
-  chown -R logstash:logstash /var/opt/GeoLite2-City && \
-  ls -al /var/opt/GeoLite2-City/*
+  chown -R logstash:logstash /var/opt/GeoLite2-City
 
 WORKDIR /usr/share/logstash/bin/
 
