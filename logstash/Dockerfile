@@ -1,5 +1,7 @@
 FROM logstash:5.6.10
 
+LABEL maintainer="alexander.malic@maastrichtuniversity.nl"
+
 ADD http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz /opt/
 RUN cd /opt && tar -xzvf GeoLite2-City.tar.gz && \
   mv GeoLite2-City*/GeoLite2-City.mmdb . && \
