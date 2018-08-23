@@ -21,7 +21,7 @@ services:
   kibana:
     image: docker.elastic.co/kibana/kibana:6.3.2
     depends_on:
-      - elasticsearch
+      - logstash
     ports: 
       - 5601:5601
     networks: 

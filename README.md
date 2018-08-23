@@ -7,7 +7,11 @@
 ```
 docker-compose up -d --build --force-recreate
 ```
+### Log
+```
+docker-compose logs -f
+```
 ### Stop & Remove
 ```
-docker-compose rm -s -f -v
+docker-compose rm -sfv
 ```
