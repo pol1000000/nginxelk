@@ -16,4 +16,4 @@ WORKDIR /usr/share/logstash/bin/
 USER logstash
 EXPOSE 12201/udp
 
-CMD ["logstash", "-f", "/etc/logstash/conf.d/logstash.conf"]
+CMD ["logstash", "-f", "/etc/logstash/conf.d/logstash.conf", "--config.reload.automatic"]
