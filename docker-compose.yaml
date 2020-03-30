@@ -19,6 +19,8 @@ services:
       - ./logstash.conf:/etc/logstash/conf.d/logstash.conf
     networks:
       - net
+    environment:
+      - LOG_LEVEL=fatal
 
   kibana:
     image: docker.elastic.co/kibana/kibana:6.3.2
